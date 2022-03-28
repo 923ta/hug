@@ -1,0 +1,155 @@
+/* 全体 */
+:root{
+  --color-bg-green: #05C081;
+  --color-text-green:#1ace92;
+  --color-text-green-stroke: #0fa070;
+}
+
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size: 1.6rem;
+}
+
+#wrap{
+  display: grid;
+  grid-template-rows: 20px 60px 60px repeat(3, auto);
+  grid-template-columns: 1fr 550px 200px 1fr;
+  gap: 20px;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダ */
+header{
+  grid-row: 2 / 4;
+  grid-column: 2 / 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+header .sitename{
+  width: 160px;
+  height: 130px;
+  display: flex;
+  background-color: var(--color-bg-green);
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .sitename-main {
+  margin: 0 auto;
+  z-index: 20;
+  color: white;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-style: italic;
+}
+header .sitename-first-text{
+  position: absolute;
+  top: 36px;
+  left: 20px;
+  font-size: 1.3rem;
+}
+header .sitename-second-text{
+  position: absolute;
+  top: 45px;
+  left: 20px;
+  font-size: 3.7rem;
+}
+header .sitename-bg-text{
+  position: absolute;
+  bottom: -10px;
+  right: 5px;
+  z-index: 15;
+  color: var(--color-bg-green);
+  font-size: 4.5rem;
+  font-style: italic;
+  font-weight: bold;
+      -webkit-text-stroke: 1px var(--color-text-green-stroke);
+}
+
+/* ナビ */
+nav{
+  margin: 0 auto;
+  padding: 0 auto;
+}
+nav a{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: var(--color-text-green);
+}
+nav .nav-link{
+  font-size: 1.5rem;
+}
+nav > ul{
+  display: flex;
+  flex-flow: row wrap;
+}
+nav > ul > li{
+  position: relative;
+  margin-left: 20px;
+}
+nav .nav-sub-link{  /*改善点 */
+  font-size: 1.5rem;
+  margin-top: 1.5px;
+}
+nav .nav-sub > ul:first-child{
+  display: flex;
+  flex-direction: row;
+}
+.sub {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 2em;
+  width: 100%;
+  min-height: 0;
+  height: 0;
+  z-index: 3;
+  transition: min-height 0.5s;
+}
+.sub > li > a {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(0, 0, 0, 0.6);
+}
+.sub > li > a:hover {
+  opacity: 1;
+}
+.sub.active {
+  min-height: 180px;
+}
+
+nav .nav-link{
+  position: relative;
+}
+nav .nav-link::after{
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+  background-color: rgba(0, 0, 0, 0.3);;
+}
+nav .nav-link:hover::after {
+  transform: scale(1, 1);
+}
+
+nav .nav-sub ion-icon{
+  margin-left: 0.5rem;
+  transition: transform 0.5s ease 0s;
+}
+nav .nav-sub:hover ion-icon{
+  transform: translateY(0.5rem);
+}

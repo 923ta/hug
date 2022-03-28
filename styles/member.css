@@ -1,0 +1,91 @@
+/* 全体 */
+:root {
+  --color-green: #05C081;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+#wrap {
+  display: grid;
+  position: relative;
+  grid-template-rows: 80px repeat(2, auto);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダー */
+header {
+  grid-row: 1 / 2;  
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+nav {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgb(0,0,0), rgba(0,0,0,0));
+}
+nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 100%;
+}
+nav a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+}
+
+/* メイン */
+main {
+  grid-row: 2 / 3;
+  margin: 0;
+  padding: 0;
+}
+main > ul {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+.grade-menu {
+  width: 20%;
+  margin: 0;
+  padding: 0;
+}
+.tab-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.target-group {
+}
+.target {
+  display: none;
+}
+.tab.is-active {
+
+}
+.target.is-show {
+  display: block;
+}
